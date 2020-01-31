@@ -12,7 +12,15 @@
         <a href="index.html"><img src="img/logo-black.svg" width="164" height="36" alt="Логотип магазина DEVICE"></a>
         <ul>
           <li>
-            <span>Поиск по сайту</span>
+            <ul>
+              <li>
+                <form action="https://echo.htmlacademy.ru" method="post">
+                  <label class="visually-hidden" for="search-site">Поиск</label>
+                  <input id="search-site" type="text" name="search" placeholder="Поиск по сайту">
+                  <button type="submit">Найти</button>
+                </form>
+              </li>
+            </ul>
           </li>
         </ul>
         <ul>
@@ -63,7 +71,54 @@
       </ul>
 
       <section>
-        <h2>Фильтр товаров</h2>
+        <h2>Фильтр:</h2>
+        <form action="https://echo.htmlacademy.ru" method="get">
+          <fieldset>
+            <legend>Стоимость</legend>
+
+          </fieldset>
+          <fieldset>
+            <legend>Цвет</legend>
+              <ul>
+                <li>
+                  <input id="filter-color-black" type="checkbox" name="black" checked>
+                  <label for="filter-color-black">Чёрный</label>
+                </li>
+                <li>
+                  <input id="filter-color-white" type="checkbox" name="white">
+                  <label for="filter-color-white">Белый</label>
+                </li>
+                <li>
+                  <input id="filter-color-blue" type="checkbox" name="blue" checked>
+                  <label for="filter-color-blue">Синий</label>
+                </li>
+                <li>
+                  <input id="filter-color-red" type="checkbox" name="red" checked>
+                  <label for="filter-color-red">Красный</label>
+                </li>
+                <li>
+                  <input id="filter-color-pink" type="checkbox" name="pink">
+                  <label for="filter-color-pink">Розовый</label>
+                </li>
+              </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Bluetooth</legend>
+            <ul>
+              <li>
+                <input id="filter-bluetooth-yes" type="radio" name="bluetooth" value="yes" checked>
+                <label for="filter-bluetooth-yes" >есть</label>
+              </li>
+              <li>
+                <input id="filter-bluetooth-no" type="radio" name="bluetooth" value="no">
+                <label for="filter-bluetooth-no">нет</label>
+              </li>
+            </ul>
+
+          </fieldset>
+          <button type="submit">Показать</button>
+        </form>
+
       </section>
 
       <section>
@@ -74,6 +129,8 @@
               <img src="img/item-1.jpg" width="360" height="380" alt="Любительская селфи-палка">
               <h3><a href="#">Любительская селфи-палка</a></h3>
               <p>500 руб.</p>
+              <a href="#">В корзину</a>
+              <a href="#">Добавить к сравнению</a>
             </article>
           </li>
           <li>
@@ -81,6 +138,8 @@
               <img src="img/item-2.jpg" width="360" height="380" alt="Профессиональная селфи-палка ">
               <h3><a href="#">Профессиональная селфи-палка</a></h3>
               <p>1 500 руб.</p>
+              <a href="#">В корзину</a>
+              <a href="#">Добавить к сравнению</a>
             </article>
           </li>
           <li>
@@ -88,6 +147,8 @@
               <img src="img/item-3.jpg" width="360" height="380" alt="Непотопляемая селфи-палка">
               <h3><a href="#">Непотопляемая селфи-палка</a></h3>
               <p>2 500 руб.</p>
+              <a href="#">В корзину</a>
+              <a href="#">Добавить к сравнению</a>
             </article>
           </li>
           <li>
@@ -95,6 +156,8 @@
               <img src="img/item-4.jpg" width="360" height="380" alt="Селфи-палка «Следуй за мной»">
               <h3><a href="#">Селфи-палка «Следуй за мной»</a></h3>
               <p>4 900 руб.</p>
+              <a href="#">В корзину</a>
+              <a href="#">Добавить к сравнению</a>
             </article>
           </li>
         </ul>
@@ -143,13 +206,13 @@
       <a href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
       <ul>
         <li>
-          <a href="#">Фейсбук</a>
+          <a href="#"><span class="visually-hidden">Фейсбук</span></a>
         </li>
         <li>
-          <a href="#">Инстаграм</a>
+          <a href="#"><span class="visually-hidden">Инстаграм</span></a>
         </li>
         <li>
-          <a href="#">Твитер</a>
+          <a href="#"><span class="visually-hidden">Твитер</span></a>
         </li>
       </ul>
       <a href="https://htmlacademy.ru/intensive/htmlcss">

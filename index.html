@@ -14,7 +14,11 @@
         </a>
         <ul>
           <li>
-            <span>Поиск по сайту</span>
+            <form action="https://echo.htmlacademy.ru" method="post">
+              <label class="visually-hidden" for="search-site">Поиск</label>
+              <input id="search-site" type="text" name="search" placeholder="Поиск по сайту">
+              <button type="submit">Найти</button>
+            </form>
           </li>
         </ul>
         <ul>
@@ -261,19 +265,47 @@
       <a href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
       <ul>
         <li>
-          <a href="#">Фейсбук</a>
+          <a href="#"><span class="visually-hidden">Фейсбук</span></a>
         </li>
         <li>
-          <a href="#">Инстаграм</a>
+          <a href="#"><span class="visually-hidden">Инстаграм</span></a>
         </li>
         <li>
-          <a href="#">Твитер</a>
+          <a href="#"><span class="visually-hidden">Твитер</span></a>
         </li>
       </ul>
       <a href="https://htmlacademy.ru/intensive/htmlcss">
         <img src="img/logo-html.svg" width="27" height="35" alt="Логотип HTML Academy">
       </a>
     </footer>
+      <!-- Модальные окна -->
+    <section>
+      <h2 class="visually-hidden">Напишите нам</h2>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <p>
+          <label for="user-name">Ваше имя:</label>
+          <input id="user-name" type="text" name="name" placeholder="Имя Фамилия">
+        </p>
+        <p>
+          <label for="user-email">Ваш e-mail:</label>
+          <input id="user-email" type="email" name="email" placeholder="email@example.com">
+        </p>
+        <p>
+          <label for="user-text">Текст письма:</label>
+          <textarea id="user-text" name="text" cols="50" rows="10">В свободной форме</textarea>
+        </p>
+        <button type="submit">Отправить</button>
+      </form>
+      <button type="button">Закрыть</button>
+    </section>
+
+    <section>
+      <h2 class="visually-hidden">Как до нас добраться</h2>
+      <p>
+        <img src="img/map-big.png" width="960" height="559" alt="г. Москва, ул. Строителей, 15">
+      </p>
+      <button type="button">Закрыть</button>
+    </section>
 
   </body>
 </html>
