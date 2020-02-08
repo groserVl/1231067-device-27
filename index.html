@@ -12,9 +12,9 @@
   <body>
     <header class="header">
       <nav class="header-nav">
-        <div class="nav-logo">
+        <a class="nav-logo">
           <img src="img/logo-black.svg" width="164" height="36" alt="Логотип магазина DEVICE">
-        </div>
+        </a>
         <ul class="nav-search">
           <li>
             <form action="https://echo.htmlacademy.ru" method="post">
@@ -78,15 +78,15 @@
 
       <h1 class="visually-hidden">Интернет магазин гаджетов Девайс</h1>
 
-      <section>
+      <section class="promo">
         <h2 class="visually-hidden">Самые популярные группы товаров нашего интернет магазина</h2>
-        <ul>
-          <li>
+        <ul class="promo-list">
+          <li class="promo-monopod">
             <h3 class="visually-hidden">Моноподы</h3>
             <img src="img/monopod.png" width="384" height="486" alt="Самая длинная палка для селфи - монопод">
             <b>Делай селфи, как Бен Стиллер!</b>
             <p>Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
-            <a href="inner.html">Подробнее</a>
+            <a class="button" href="inner.html">Подробнее</a>
             <table>
               <caption class="visually-hidden">Характеристика палки для селфи</caption>
               <tr>
@@ -101,12 +101,12 @@
               </tr>
             </table>
           </li>
-          <li>
+          <li class="promo-bracelet">
             <h3 class="visually-hidden">Фитнес-браслеты</h3>
             <img src="img/bracelet.png" width="345" height="485" alt="Мотивирующие фитнес-браслеты">
             <b>Худеем правильно!</b>
             <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
-            <a href="#">Подробнее</a>
+            <a class="button" href="#">Подробнее</a>
             <table>
               <caption class="visually-hidden">Характеристика фитнес-браслета</caption>
               <tr>
@@ -117,12 +117,12 @@
               </tr>
             </table>
           </li>
-          <li>
+          <li class="promo-quadcopter">
             <h3 class="visually-hidden">Квадрокоптеры</h3>
             <img src="img/quadcopter.png" width="526" height="334" alt="Квадрокоптер с мощным лазером">
             <b>Порхает как бабочка, жалит как пчела!</b>
             <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
-            <a href="#">Подробнее</a>
+            <a class="button" href="#">Подробнее</a>
             <table>
               <caption class="visually-hidden">Характеристика квадрокоптера</caption>
               <tr>
@@ -138,9 +138,9 @@
         </ul>
       </section>
 
-      <section>
+      <section class="catalog">
         <h2 class="visually-hidden">Категории товаров нашего интернет магазина</h2>
-        <ul>
+        <ul class="catalog-list">
           <li>
             <a href="#">
               <h3>Виртуальная реальность</h3>
@@ -174,9 +174,9 @@
         </ul>
       </section>
 
-      <section>
+      <section class="services">
         <h2 class="visually-hidden">Наши сервисы</h2>
-        <ul>
+        <ul class="services-list">
           <li>
             <h3>Доставка</h3>
             <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
@@ -192,24 +192,28 @@
         </ul>
       </section>
 
-      <section>
+      <section class="companies">
         <h2 class="visually-hidden">Производители товаров</h2>
-        <ul>
-          <li>
-            <h3>Компания Dji</h3>
-            <img src="img/dji-gray.jpg" width="260" height="100" alt="Логотип компании Dji">
+        <ul class="companies-list">
+          <li class="companies-item">
+            <h3 class="visually-hidden">Компания Dji</h3>
+            <a href=""><img src="img/dji-gray.jpg" width="260" height="100" alt="Логотип компании Dji"></a>
+            <img src="img/dji-colors.jpg" width="260" height="100" alt="Логотип компании Dji">
           </li>
           <li>
-            <h3>Компания SP Gadgets</h3>
-            <img src="img/spgadgets-gray.jpg"  width="260" height="100" alt="Логотип компании SP Gadgets">
+            <h3 class="visually-hidden">Компания SP Gadgets</h3>
+            <a href="#"><img src="img/spgadgets-gray.jpg"  width="260" height="100" alt="Логотип компании SP Gadgets"></a>
+            <img src="img/spgadgets-colors.jpg" width="260" height="100" alt="Логотип компании SP Gadgets">
           </li>
           <li>
-            <h3>Компания GoPro</h3>
-            <img src="img/gopro-gray.jpg" width="260" height="100" alt="Логотип компании GoPro">
+            <h3 class="visually-hidden">Компания GoPro</h3>
+            <a href="#"><img src="img/gopro-gray.jpg" width="260" height="100" alt="Логотип компании GoPro"></a>
+            <img src="img/gopro-colors.jpg" width="260" height="100" alt="Логотип компании GoPro">
           </li>
           <li>
-            <h3>Компания Vive</h3>
-            <img src="img/vive-gray.jpg" width="260" height="100" alt="Логотип компании Vive">
+            <h3 class="visually-hidden">Компания Vive</h3>
+            <a href="#"><img src="img/vive-gray.jpg" width="260" height="100" alt="Логотип компании Vive"></a>
+            <img src="img/vive-colors.jpg" width="260" height="100" alt="Логотип компании Vive">
           </li>
         </ul>
       </section>
@@ -241,9 +245,9 @@
     </main>
 
     <footer class="footer">
-      <div>
+      <a class="footer-logo">
         <img src="img/logo-yellow.svg" width="164" height="36" alt="Логотип магазина DEVICE">
-      </div>
+      </a>
       <ul class="footer-user-menu">
         <li>
           <a href="#">Войти</a>
@@ -305,7 +309,7 @@
           <label for="user-text">Текст письма:</label>
           <textarea id="user-text" name="text" cols="50" rows="10">В свободной форме</textarea>
         </p>
-        <button class="button" type="submit">Отправить</button>
+        <button class="button modal-contacts-button" type="submit">Отправить</button>
       </form>
       <button class="modal-close" type="button">Закрыть</button>
     </section>

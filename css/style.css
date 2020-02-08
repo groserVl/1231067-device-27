@@ -99,8 +99,84 @@ a {
   letter-spacing: 3.6px;
 }
 
+/* Отключение логотипа на гл. странице от состояний (наведение, нажатие) */
+.header-nav .nav-logo:hover,
+.footer .footer-logo:hover {
+  opacity: 1;
+}
+
 .user-exit {
   opacity: 0.3;
+}
+
+/* Промоблок(слайдер №1 */
+.promo {
+  background-image: linear-gradient(to bottom, rgba(240, 197, 46, 0.5) 110px, transparent 110px);
+}
+.promo-list {
+  list-style: none;
+}
+
+.promo-list b {
+  font-family: "Gilroy Extrabold", Arial, sans-serif;
+  font-size: 47px;
+  line-height: 56px;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0.17px;
+}
+
+.promo-list td {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.36px;
+}
+
+.promo-list th {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: 0.13px;
+}
+
+/* Категории товаров */
+.catalog-list {
+  list-style: none;
+}
+
+.catalog-list h3 {
+  font-family: "Gilroy Extrabold", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0.18px;
+}
+
+/* Сервисы */
+.services {
+   background-image: linear-gradient(to bottom, transparent 100px, #e5e5e5 100px);
+}
+
+.services-list {
+  list-style: none;
+}
+
+.services-list h3 {
+  font-family: "Gilroy Extrabold", Arial, sans-serif;
+  font-size: 47px;
+  line-height: 48px;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0.21px;
+}
+
+/* Производители */
+.companies-list {
+  list-style: none;
 }
 
 /* О нас */
@@ -173,13 +249,46 @@ a {
 
 /* Модальные окна */
 .modal {
-  display: none;
+  /* display: none; */
+}
+
+.modal-contacts label {
+  font-family: "Gilroy Extrabold", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.modal-contacts input,
+.modal-contacts textarea {
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(70, 70, 70, 0.4);
+
+  background-color: rgba(229, 229, 229, 0.5);
+  border: 0;
+}
+
+.modal-contacts-button {
+  background: none;
+  background-image: linear-gradient(to bottom, transparent 40%, #f0c52e 40%, #f0c52e 60%, transparent 60%);
+  border: 0;
 }
 
 /* Внутренняя страница */
+.inner-page .nav-logo:hover,
+.inner-page .footer-logo:hover {
+  opacity: 0.6;
+}
+
+.inner-page .nav-logo:active,
+.inner-page .footer-logo:active {
+  opacity: 0.3;
+}
 
 .title {
- font-family: "Gilroy Extrabold", Arial, sans-serif;
+  font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
   font-weight: 400;
@@ -257,6 +366,48 @@ a {
   letter-spacing: 0.14px;
 }
 
+.filter-form-button {
+  background: none;
+  background-image: linear-gradient(to bottom, transparent 40%, #f0c52e 40%, #f0c52e 60%, transparent 60%);
+  border: 0;
+}
+
+/* Сортировка */
+.monopods h3 {
+  font-family: "Gilroy Extrabold", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.91px;
+}
+
+.monopods-sort-list {
+  list-style: none;
+}
+
+.sort-list-item,
+.sort-list-item a {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.sort-list-item a:hover,
+.sort-list-item a:focus {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sort-list-item a:active {
+  color: rgba(0, 0, 0, 1);
+}
+
+.sort-current {
+  color: rgba(0, 0, 0, 1);
+}
+
 /* Карточки */
 
 .monopods-list {
@@ -296,6 +447,48 @@ a {
 .monopods-item-compare:active {
   opacity: 0.2;
 }
+
+/* Пагинация */
+.monopods-pagination {
+  font-family: "Gilroy Extrabold", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.91px;
+}
+
+.pagination-button {
+  color: rgba(0, 0, 0, 1);
+}
+
+.pagination-button:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.pagination-list {
+  list-style: none;
+}
+
+.pagination-list-item a {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.pagination-list-item a:hover,
+.pagination-list-item a:focus {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.pagination-list-item a:active {
+  color: rgba(0, 0, 0, 1);
+}
+
+.pagination-current a,
+.pagination-current a:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
 
 
 

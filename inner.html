@@ -138,7 +138,7 @@
             </ul>
 
           </fieldset>
-          <button class="button form-button" type="submit">Показать</button>
+          <button class="button filter-form-button" type="submit">Показать</button>
         </form>
 
       </section>
@@ -146,26 +146,28 @@
       <section class="monopods">
         <h2 class="visually-hidden">Список моноподов для селфи</h2>
 
-        <h3>Сортировка:
-          <span class="visually-hidden">списка моноподов для селфи</span>
-        </h3>
-        <ul>
-          <li>
-            <a>По цене</a>
-          </li>
-          <li>
-            <a href="#">По типу</a>
-          </li>
-          <li>
-            <a href="#">По популярности</a>
-          </li>
-          <li>
-            <a href="#"><span>Вверх</span></a>
-          </li>
-          <li>
-            <a href="#"><span>Вниз</span></a>
-          </li>
-        </ul>
+        <div class="monopods-sort">
+          <h3>Сортировка:
+            <span class="visually-hidden">списка моноподов для селфи</span>
+          </h3>
+          <ul class="monopods-sort-list">
+            <li class="sort-list-item sort-current">По цене</li>
+            <li class="sort-list-item">
+              <a href="#">По типу</a>
+            </li>
+            <li class="sort-list-item">
+              <a href="#">По популярности</a>
+            </li>
+            <li class="sort-list-item">
+              <a href="#">
+                <span>Вверх</span>
+              </a>
+            </li>
+            <li class="sort-list-item sort-current">
+                <span>Вниз</span>
+            </li>
+          </ul>
+        </div>
 
         <h3 class="visually-hidden">Карточки моноподов для селфи</h3>
         <ul class="monopods-list">
@@ -215,22 +217,25 @@
           </li>
         </ul>
 
-        <h3 class="visually-hidden">Пагинация - порядковая нумерация страниц</h3>
-        <ul>
-          <li>
-            <a>1</a>
-          </li>
-          <li>
-            <a href="#">2</a>
-          </li>
-          <li>
-            <a href="#">3</a>
-          </li>
-        </ul>
-        <a href="#">Назад</a>
-        <a href="#">Вперёд</a>
+        <div class="monopods-pagination">
+          <h3 class="visually-hidden">Пагинация - порядковая нумерация страниц</h3>
+          <a class="pagination-button" href="#">Назад</a>
+          <a class="pagination-button" href="#">Вперёд</a>
+          <ul class="pagination-list">
+            <li class="pagination-list-item pagination-current">
+              <a>1</a>
+            </li>
+            <li class="pagination-list-item">
+              <a href="#">2</a>
+            </li>
+            <li class="pagination-list-item">
+              <a href="#">3</a>
+            </li>
+          </ul>
 
-      </section cl>
+        </div>
+
+      </section>
     </main>
 
     <footer class="footer">
