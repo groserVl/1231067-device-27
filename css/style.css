@@ -18,7 +18,12 @@
 }
 
 /* Подключение общих стилей */
+*, *::before, *::after {
+  box-sizing: border-box
+}
+
 body {
+  min-width: 1200px;
   margin: 0;
   padding: 0;
 
@@ -29,6 +34,12 @@ body {
   color: #464646;
 
   background-color: #ffffff;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 a {
@@ -67,11 +78,19 @@ a {
 }
 
 /* Header */
-.header {
-  background-image: linear-gradient(to bottom, transparent 17px, rgba(240, 197, 46, 0.5) 17px);
+.header-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 90px 60px 50px;
+
+  background-image: linear-gradient(to bottom, transparent 40px, rgba(240, 197, 46, 0.5) 40px);
 }
 
 .header-nav ul {
+  margin: 0;
+  padding: 0;
+
   list-style: none;
 }
 
@@ -97,6 +116,27 @@ a {
   color: #000000;
   text-transform: uppercase;
   letter-spacing: 3.6px;
+}
+
+.nav-logo {
+  position: absolute;
+}
+
+.header-nav > ul {
+  width: 500px;
+  margin-bottom: 50px;
+}
+
+.nav-user {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nav-site {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* Отключение логотипа на гл. странице от состояний (наведение, нажатие) */
@@ -179,8 +219,22 @@ a {
   list-style: none;
 }
 
-/* О нас */
-.index-columns h2 {
+/* О нас и Контакты */
+.index-columns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.about,
+.contacts {
+  width: 580px;
+}
+
+.about h2,
+.contacts h2 {
+  margin: 0;
+
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
@@ -189,6 +243,18 @@ a {
 }
 
 
+
+.about p {
+  margin: 0;
+}
+
+.about ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
 .about li {
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 16px;
@@ -196,7 +262,10 @@ a {
   font-weight: 400;
   color: #000000;
   list-style: none;
+}
 
+.contacts {
+  padding-left: 20px;
 }
 
 /* Footer */
@@ -206,7 +275,18 @@ a {
   background-color: #464646;
 }
 
+.footer-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
 .footer ul {
+  margin: 0;
+  padding: 0;
+
   list-style: none;
 }
 
@@ -236,15 +316,44 @@ a {
   opacity: 0.3;
 }
 
+.footer-logo {
+  width: 560px;
+  margin-bottom: 40px;
+}
 
+.footer-user-menu {
+  display: flex;
+  width: 500px;
+}
 
-.footer-site-menu {
+.footer-address {
+  width: 260px;
+  margin: 0;
+}
+
+.footer .footer-site-menu {
+  display: flex;
+  width: 440px;
+  margin-bottom: 60px;
+
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 3.6px;
+}
+
+.footer-telephone {
+  width: 260px;
+}
+
+.footer-social-buttons {
+  width: 660px;
+}
+
+.footer-logo-htmlacademy {
+  width: 200px;
 }
 
 /* Модальные окна */
@@ -275,6 +384,7 @@ a {
   background-image: linear-gradient(to bottom, transparent 40%, #f0c52e 40%, #f0c52e 60%, transparent 60%);
   border: 0;
 }
+/* ============================= */
 
 /* Внутренняя страница */
 .inner-page .nav-logo:hover,
@@ -288,6 +398,10 @@ a {
 }
 
 .title {
+  margin: 0;
+  margin-left: 60px;
+  margin-bottom: 30px;
+
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
@@ -296,7 +410,13 @@ a {
   letter-spacing: 0.17px;
 }
 
+/* Хлебные крошки */
 .breadcrumbs {
+  margin: 0;
+  margin-left: 60px;
+  margin-bottom: 50px;
+  padding: 0;
+
   list-style: none;
 }
 
@@ -309,7 +429,6 @@ a {
   opacity: 0.3;
 }
 
-/* Хлебные крошки */
 .breadcrumbs a:hover,
 .breadcrumbs a:focus {
   color: #000000;
@@ -331,7 +450,21 @@ a {
   opacity: 0.3;
 }
 
+/* Доп. обёртки */
+.catalog-columns {
+  background-image: linear-gradient(to right, #efefef 27%, transparent 27%);
+}
+
+.catalog-columns .container {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Фильтр */
+.filter {
+  width: 300px;
+}
+
 .filter ul {
   list-style: none;
 }
@@ -373,6 +506,10 @@ a {
 }
 
 /* Сортировка */
+.monopods {
+  width: 760px;
+}
+
 .monopods h3 {
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 16px;
@@ -411,7 +548,19 @@ a {
 /* Карточки */
 
 .monopods-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-right: -40px;
+  padding: 0;
+
   list-style: none;
+}
+
+.monopods-item {
+  width: 360px;
+  margin-bottom: 70px;
+  margin-right: 40px;
 }
 
 .monopods-item-title a {
@@ -447,6 +596,17 @@ a {
 .monopods-item-compare:active {
   opacity: 0.2;
 }
+
+/* Всплывающие кнопки на карточках */
+.buttons-wrap {
+  display: none;
+}
+
+.monopods-item:hover .buttons-wrap {
+  display: block;
+}
+
+
 
 /* Пагинация */
 .monopods-pagination {
