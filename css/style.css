@@ -79,10 +79,7 @@ a {
 
 /* Header */
 .header-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 90px 60px 50px;
+  padding: 22px 60px 30px;
 
   background-image: linear-gradient(to bottom, transparent 40px, rgba(240, 197, 46, 0.5) 40px);
 }
@@ -118,26 +115,47 @@ a {
   letter-spacing: 3.6px;
 }
 
-.nav-logo {
-  position: absolute;
+.header-top-wrap,
+.header-middle-wrap,
+.header-bottom-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
-.header-nav > ul {
+.header-middle-wrap {
+  margin-bottom: 35px;
+}
+
+.nav-search {
   width: 500px;
-  margin-bottom: 50px;
 }
 
 .nav-user {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 500px;
+}
+
+.nav-catalog {
+  width: 500px;
+}
+
+.nav-catalog-list {
+  display: none;
 }
 
 .nav-site {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 500px;
 }
+
+
+
+
 
 /* Отключение логотипа на гл. странице от состояний (наведение, нажатие) */
 .header-nav .nav-logo:hover,
