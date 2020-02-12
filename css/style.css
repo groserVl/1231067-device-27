@@ -58,6 +58,8 @@ a {
 }
 
 .button {
+  display: inline-block;
+
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
@@ -169,13 +171,36 @@ a {
 
 /* Промоблок(слайдер №1 */
 .promo {
-  background-image: linear-gradient(to bottom, rgba(240, 197, 46, 0.5) 110px, transparent 110px);
-}
-.promo-list {
-  list-style: none;
+  margin-bottom: 100px;
 }
 
-.promo-list b {
+.promo-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  background-image: linear-gradient(to bottom, rgba(240, 197, 46, 0.5) 110px, transparent 110px);
+}
+
+.promo-list > li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.promo-image {
+  width: 526px;
+}
+
+.promo-text {
+  width: 500px;
+}
+
+.promo-text b {
+  display: block;
+  margin-top: 80px;
+  margin-bottom: 30px;
+
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 47px;
   line-height: 56px;
@@ -184,7 +209,17 @@ a {
   letter-spacing: 0.17px;
 }
 
-.promo-list td {
+.promo-text p {
+  margin: 0;
+  margin-bottom: 60px;
+}
+
+.promo-button {
+  margin-bottom: 70px;
+
+}
+
+.promo-text td {
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 36px;
   line-height: 48px;
@@ -193,15 +228,48 @@ a {
   letter-spacing: 0.36px;
 }
 
-.promo-list th {
+.promo-text th {
   font-size: 13px;
   line-height: 20px;
   font-weight: 300;
   letter-spacing: 0.13px;
 }
 
+li.promo-monopod {
+  /* display: none; */
+}
+
+.promo-monopod .promo-image {
+  padding-left: 90px;
+}
+
+li.promo-bracelet {
+  display: none;
+}
+
+.promo-bracelet .promo-image {
+  padding-left: 115px;
+}
+
+li.promo-quadcopter {
+  display: none;
+}
+
+.promo-quadcopter .promo-image {
+  padding-left: 30px;
+}
+
 /* Категории товаров */
+.catalog {
+  margin-bottom: 160px;
+}
+
 .catalog-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+
   list-style: none;
 }
 
@@ -216,14 +284,33 @@ a {
 
 /* Сервисы */
 .services {
+  margin-bottom: 90px;
+
    background-image: linear-gradient(to bottom, transparent 100px, #e5e5e5 100px);
 }
 
+.services-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.services-buttons {
+  width: 300px;
+}
+
 .services-list {
+  width: 700px;
+  margin: 0;
+  padding: 0;
+
   list-style: none;
 }
 
 .services-list h3 {
+  margin: 0;
+  margin-top: 80px;
+  margin-bottom: 40px;
+
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
@@ -232,8 +319,21 @@ a {
   letter-spacing: 0.21px;
 }
 
+.services-list p {
+  margin: 0;
+}
+
 /* Производители */
+.companies {
+  margin-bottom: 90px;
+}
+
 .companies-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+
   list-style: none;
 }
 
@@ -259,8 +359,6 @@ a {
   font-weight: 400;
   color: #000000;
 }
-
-
 
 .about p {
   margin: 0;
@@ -470,7 +568,9 @@ a {
 
 /* Доп. обёртки */
 .catalog-columns {
-  background-image: linear-gradient(to right, #efefef 27%, transparent 27%);
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 70px, transparent 70px),
+    linear-gradient(to right, #efefef 27%, transparent 27%);
 }
 
 .catalog-columns .container {
@@ -523,12 +623,14 @@ a {
   border: 0;
 }
 
-/* Сортировка */
+/* Моноподы */
 .monopods {
   width: 760px;
 }
 
 .monopods h3 {
+  margin: 0;
+
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -538,7 +640,26 @@ a {
   letter-spacing: 0.91px;
 }
 
+/* Сортировка */
+.monopods-sort {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+  padding-top: 20px;
+}
+
+.monopods-sort-titles {
+  width: 160px;
+}
+
 .monopods-sort-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  width: 560px;
+
   list-style: none;
 }
 
@@ -628,6 +749,11 @@ a {
 
 /* Пагинация */
 .monopods-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 75px;
+
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -635,9 +761,17 @@ a {
   color: #000000;
   text-transform: uppercase;
   letter-spacing: 0.91px;
+
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.monopods-pagination a + a {
+  order: 1;
 }
 
 .pagination-button {
+  padding: 30px;
+
   color: rgba(0, 0, 0, 1);
 }
 
@@ -646,7 +780,16 @@ a {
 }
 
 .pagination-list {
+  margin: 0;
+  margin-right: -25px;
+  padding: 0;
+
   list-style: none;
+}
+
+.pagination-list-item {
+  display: inline-block;
+  margin-right: 25px;
 }
 
 .pagination-list-item a {
