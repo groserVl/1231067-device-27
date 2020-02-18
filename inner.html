@@ -22,21 +22,21 @@
               <form action="https://echo.htmlacademy.ru" method="post">
                 <label class="visually-hidden" for="search-site">Поиск</label>
                 <input id="search-site" type="text" name="search" placeholder="Поиск по сайту">
-                <button type="submit">Найти</button>
+                <button class="nav-search-button" type="submit">Найти</button>
               </form>
             </li>
           </ul>
           <ul class="nav-user">
-            <li>
+            <li class="nav-user-enter">
               <a href="#">Валентин Петухов</a>
             </li>
             <li class="user-exit">
               <a href="#">Выйти</a>
             </li>
-            <li>
+            <li class="nav-user-compare">
               <a href="#">Сравнить</a>
             </li>
-            <li>
+            <li class="nav-user-cart">
               <a href="#">Корзина</a>
             </li>
           </ul>
@@ -46,36 +46,42 @@
             <li>
               <a class="nav-catalog-title" href="#">Каталог товаров</a>
               <ul class="nav-catalog-list">
-                <li>
-                  <a href="#">Виртуальная реальность</a>
-                </li>
-                <li>
-                  Моноподы для селфи
-                </li>
-                <li>
-                  <a href="#">Экшн-камеры</a>
-                </li>
-                <li>
-                  <a href="#">Фитнес-браслеты</a>
-                </li>
-                <li>
-                  <a href="#">Умные часы</a>
-                </li>
-                <li>
-                  <a href="#">Квадрокоптеры</a>
-                </li>
+                <div class="catalog-wrap-left">
+                  <li>
+                    <a href="#">Виртуальная реальность</a>
+                  </li>
+                  <li>
+                    Моноподы для селфи
+                  </li>
+                  <li>
+                    <a href="#">Экшн-камеры</a>
+                  </li>
+                </div>
+                <div class="catalog-wrap-middle">
+                  <li>
+                    <a href="#">Фитнес-браслеты</a>
+                  </li>
+                  <li>
+                    <a href="#">Умные часы</a>
+                  </li>
+                </div>
+                <div class="catalog-wrap-righ">
+                  <li>
+                    <a href="#">Квадрокоптеры</a>
+                  </li>
+                </div>
               </ul>
             </li>
           </ul>
           <ul class="nav-site">
             <li>
-              <a href="">Доставка</a>
+              <a href="#">Доставка</a>
             </li>
             <li>
-              <a href="">Гарантия</a>
+              <a href="#">Гарантия</a>
             </li>
             <li>
-              <a href="">Контакты</a>
+              <a href="#">Контакты</a>
             </li>
           </ul>
         </div>
@@ -112,38 +118,38 @@
               <fieldset>
                 <legend>Цвет</legend>
                   <ul>
-                    <li>
-                      <input id="filter-color-black" type="checkbox" name="black" checked>
-                      <label for="filter-color-black">Чёрный</label>
+                    <li class="filter-option">
+                      <input class="visually-hidden filter-input filter-checkbox" id="filter-color-black" type="checkbox" name="black" checked>
+                      <label for="filter-color-black"><span class="filter-field-fill"></span>Чёрный</label>
                     </li>
-                    <li>
-                      <input id="filter-color-white" type="checkbox" name="white">
-                      <label for="filter-color-white">Белый</label>
+                    <li class="filter-option">
+                      <input class="visually-hidden filter-input filter-checkbox" id="filter-color-white" type="checkbox" name="white">
+                      <label for="filter-color-white"><span class="filter-field-fill"></span>Белый</label>
                     </li>
-                    <li>
-                      <input id="filter-color-blue" type="checkbox" name="blue" checked>
-                      <label for="filter-color-blue">Синий</label>
+                    <li class="filter-option">
+                      <input class="visually-hidden filter-input filter-checkbox" id="filter-color-blue" type="checkbox" name="blue" checked>
+                      <label for="filter-color-blue"><span class="filter-field-fill"></span>Синий</label>
                     </li>
-                    <li>
-                      <input id="filter-color-red" type="checkbox" name="red" checked>
-                      <label for="filter-color-red">Красный</label>
+                    <li class="filter-option">
+                      <input class="visually-hidden filter-input filter-checkbox" id="filter-color-red" type="checkbox" name="red" checked>
+                      <label for="filter-color-red"><span class="filter-field-fill"></span>Красный</label>
                     </li>
-                    <li>
-                      <input id="filter-color-pink" type="checkbox" name="pink">
-                      <label for="filter-color-pink">Розовый</label>
+                    <li class="filter-option">
+                      <input class="visually-hidden filter-input filter-checkbox" id="filter-color-pink" type="checkbox" name="pink">
+                      <label for="filter-color-pink"><span class="filter-field-fill"></span>Розовый</label>
                     </li>
                   </ul>
               </fieldset>
               <fieldset>
                 <legend>Bluetooth</legend>
                 <ul>
-                  <li>
-                    <input id="filter-bluetooth-yes" type="radio" name="bluetooth" value="yes" checked>
-                    <label for="filter-bluetooth-yes" >есть</label>
+                  <li class="filter-option">
+                    <input class="visually-hidden filter-input filter-radio" id="filter-bluetooth-yes" type="radio" name="bluetooth" value="yes" checked>
+                    <label for="filter-bluetooth-yes" >Есть</label>
                   </li>
-                  <li>
-                    <input id="filter-bluetooth-no" type="radio" name="bluetooth" value="no">
-                    <label for="filter-bluetooth-no">нет</label>
+                  <li class="filter-option">
+                    <input class="visually-hidden filter-input filter-radio" id="filter-bluetooth-no" type="radio" name="bluetooth" value="no">
+                    <label for="filter-bluetooth-no">Нет</label>
                   </li>
                 </ul>
 
@@ -184,11 +190,13 @@
               <li class="monopods-item">
                 <article>
                   <img src="img/item-1.jpg" width="360" height="380" alt="Любительская селфи-палка">
-                  <h4 class="monopods-item-title">
-                    <a href="#">Любительская селфи-палка</a>
-                  </h4>
-                  <p>500 руб.</p>
-                  <div class="buttons-wrap">
+                  <div class="text-wrap">
+                    <p class="monopods-item-title">
+                      <a href="#">Любительская селфи-палка</a>
+                    </p>
+                    <p>500 руб.</p>
+                  </div>
+                  <div class="overlay-wrap">
                     <a class="button monopods-item-button" href="#">В корзину</a>
                     <a class="monopods-item-compare" href="#">Добавить к сравнению</a>
                   </div>
@@ -197,11 +205,13 @@
               <li class="monopods-item">
                 <article>
                   <img src="img/item-2.jpg" width="360" height="380" alt="Профессиональная селфи-палка ">
-                  <h4 class="monopods-item-title">
-                    <a href="#">Профессиональная селфи-палка</a>
-                  </h4>
-                  <p>1 500 руб.</p>
-                  <div class="buttons-wrap">
+                  <div class="text-wrap">
+                    <p class="monopods-item-title">
+                      <a href="#">Профессиональная <br> селфи-палка</a>
+                    </p>
+                    <p>1 500 руб.</p>
+                  </div>
+                  <div class="overlay-wrap">
                     <a class="button monopods-item-button" href="#">В корзину</a>
                     <a class="monopods-item-compare" href="#">Добавить к сравнению</a>
                   </div>
@@ -210,11 +220,13 @@
               <li class="monopods-item">
                 <article>
                   <img src="img/item-3.jpg" width="360" height="380" alt="Непотопляемая селфи-палка">
-                  <h4 class="monopods-item-title">
-                    <a href="#">Непотопляемая селфи-палка</a>
-                  </h4>
-                  <p>2 500 руб.</p>
-                  <div class="buttons-wrap">
+                  <div class="text-wrap">
+                    <p class="monopods-item-title">
+                      <a href="#">Непотопляемая селфи-палка</a>
+                    </p>
+                    <p>2 500 руб.</p>
+                  </div>
+                  <div class="overlay-wrap">
                     <a class="button monopods-item-button" href="#">В корзину</a>
                     <a class="monopods-item-compare" href="#">Добавить к сравнению</a>
                   </div>
@@ -223,11 +235,13 @@
               <li class="monopods-item">
                 <article>
                   <img src="img/item-4.jpg" width="360" height="380" alt="Селфи-палка «Следуй за мной»">
-                  <h4 class="monopods-item-title">
-                    <a href="#">Селфи-палка «Следуй за мной»</a>
-                  </h4>
-                  <p>4 900 руб.</p>
-                  <div class="buttons-wrap">
+                  <div class="text-wrap">
+                    <p class="monopods-item-title">
+                      <a href="#">Селфи-палка «Следуй за<br>мной»</a>
+                    </p>
+                    <p>4 900 руб.</p>
+                  </div>
+                  <div class="overlay-wrap">
                     <a class="button monopods-item-button" href="#">В корзину</a>
                     <a class="monopods-item-compare" href="#">Добавить к сравнению</a>
                   </div>
@@ -262,16 +276,16 @@
       <div class="footer-wrap container">
         <a class="footer-logo" href="index.html"><img src="img/logo-yellow.svg" width="164" height="36" alt="Логотип магазина DEVICE"></a>
         <ul class="footer-user-menu">
-          <li>
+          <li class="footer-user-enter">
             <a href="#">Валентин Петухов</a>
           </li>
           <li class="user-exit">
             <a href="#">Выйти</a>
           </li>
-          <li>
+          <li class="footer-user-compare">
             <a href="#">Сравнить</a>
           </li>
-          <li>
+          <li class="footer-user-cart">
             <a href="#">Корзина</a>
           </li>
         </ul>
@@ -290,17 +304,17 @@
         <a class="footer-telephone" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
         <ul class="footer-social-buttons">
           <li>
-            <a href="#">
+            <a  class="social-button-facebook"href="#">
               <span class="visually-hidden">Фейсбук</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a class="social-button-instagram" href="#">
               <span class="visually-hidden">Инстаграм</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a class="social-button-twitter" href="#">
               <span class="visually-hidden">Твитер</span>
             </a>
           </li>
