@@ -154,8 +154,12 @@ input[type="radio"].visually-hidden {
   margin-bottom: 7px;
 }
 
+.header-top-wrap {
+  margin-left: -2px;
+}
+
 .header-middle-wrap {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 /* --- Поиск----- */
 .nav-search {
@@ -345,15 +349,23 @@ ul.nav-catalog-list {
 .nav-catalog-list li {
   margin-bottom: 6px;
 }
+.nav-catalog-list > li:nth-child(1) {
+  width: 200px;
+}
 
-.catalog-wrap-left {
+.nav-catalog-list > li:nth-child(2),
+.nav-catalog-list > li:nth-child(3) {
+  width: 160px;
+}
+
+/* .catalog-wrap-left {
   width: 200px;
 }
 
 .catalog-wrap-middle,
 .catalog-wrap-right {
   width: 160px;
-}
+} */
 
 
 /* Промоблок(слайдер №1 */
@@ -541,7 +553,7 @@ li.promo-quadcopter {
 }
 
 /* О нас и Контакты */
-.index-columns {
+.about-contacts {
   display: flex;
   justify-content: space-between;
   margin-bottom: 80px;
@@ -552,8 +564,7 @@ li.promo-quadcopter {
   width: 580px;
 }
 
-.about h2,
-.contacts h2 {
+.about-contacts h2 {
   position: relative;
 
   margin: 0;
@@ -567,8 +578,7 @@ li.promo-quadcopter {
   letter-spacing: 0.21px;
 }
 
-.about p,
-.contacts p {
+.about-contacts p {
   width: 475px;
   margin: 0;
 
@@ -614,8 +624,7 @@ li.promo-quadcopter {
   padding-left: 20px;
 }
 
-.about h2::before,
-.contacts h2::before {
+.about-contacts h2::before {
   content: "";
   top: -51px;
 
@@ -659,8 +668,6 @@ li.promo-quadcopter {
 
 /* Footer */
 .footer {
-  color: #ffffff;
-
   background-color: #464646;
 }
 
@@ -677,10 +684,6 @@ li.promo-quadcopter {
   padding: 0;
 
   list-style: none;
-}
-
-.footer a {
-  color: #ffffff;
 }
 
 .footer-site-menu a:hover,
@@ -700,16 +703,18 @@ li.promo-quadcopter {
 
 .footer-logo {
   width: 164px;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   margin-right: 380px;
 }
 
 /* Меню пользователя */
-.footer-user-menu {
+ul.footer-user-menu {
   display: flex;
   flex-wrap: wrap;
   width: 500px;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
+  margin-top: -2px;
+
 }
 
 .footer-user-menu a {
@@ -787,6 +792,8 @@ li.promo-quadcopter {
   width: 260px;
   margin: 0;
   margin-bottom: 60px;
+
+  color: #ffffff;
 }
 
 .footer-address::after {
@@ -807,8 +814,9 @@ li.promo-quadcopter {
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
-  width: 428px;
+  width: 430px;
   margin-bottom: 60px;
+  padding-right: 2px;
 
 
   font-family: "Gilroy Extrabold", Arial, sans-serif;
@@ -818,13 +826,20 @@ li.promo-quadcopter {
   text-transform: uppercase;
   letter-spacing: 3.6px;
 }
+
+.footer-site-menu a {
+  color: #ffffff;
+}
 /* Телефон */
 .footer-telephone {
   width: 165px;
   margin-bottom: 60px;
   margin-left: 90px;
+  margin-right: -2px;
 
+  color: #ffffff;
 }
+
 
 /* Соц. кнопки */
 .footer .footer-social-buttons {
@@ -934,7 +949,7 @@ li.promo-quadcopter {
   line-height: 48px;
   font-weight: 400;
   color: #000000;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.6px;
 }
 
 /* Хлебные крошки */
@@ -1068,10 +1083,14 @@ li.promo-quadcopter {
   border: none;
 }
 
+.filter .filter-bluetooth {
+  margin-bottom: 31px;
+}
+
 .filter legend {
   position: relative;
 
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 18px;
@@ -1081,11 +1100,19 @@ li.promo-quadcopter {
   letter-spacing: 0.18px;
 }
 
+.filter-color legend {
+  margin-bottom: 19px;
+}
+
+.filter-bluetooth legend {
+  margin-bottom: 19px;
+}
+
 .filter legend::before {
   content: "";
 
   position: absolute;
-  top: -11px;
+  top: -12px;
 
   width: 200px;
   height: 2px;
@@ -1107,7 +1134,7 @@ li.promo-quadcopter {
 .filter-option label {
   display: block;
   width: 100px;
-  padding-left: 40px;
+  padding-left: 37px;
 
   font-size: 14px;
   line-height: 40px;
@@ -1118,12 +1145,87 @@ li.promo-quadcopter {
   user-select: none;
 }
 
+/* Стоимость */
+
+.filter-range {
+  margin-top: 14px;
+}
+
+/* Ползунок */
+.filter-range-controls {
+  position: relative;
+
+  margin-bottom: 5px;
+}
+
+.filter-range-scale {
+  width: 196px;
+  height: 2px;
+
+  background-color: #dbdbdb;
+}
+
+.filter-range-bar {
+  width: 120px;
+  height: 2px;
+
+  background-color: #91c92f;
+}
+
+.filter-range-controls .toggle {
+  position: absolute;
+  top: -10px;
+  left: 0;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 #dadada;
+  cursor: pointer;
+}
+
+.filter-range-controls .toggle-min {
+  left: -6px;
+}
+
+.filter-range-controls .toggle-max {
+  left: 107px;
+}
+/* диапазон цены */
+.filter-range-price label,
+.filter-range-price input {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.filter-range-price label {
+  display: inline-block;
+  width: 80px;
+}
+
+.filter-range-price input {
+  width: 50px;
+
+  border: none;
+  background-color: transparent;
+}
+
+.filter-range-price .max-price {
+  margin-left: 6px;
+}
+
 /* Поле для чекбокса */
 .filter-field-fill {
   position: absolute;
 
   top: 8px;
-  left: 0px;
+  left: -1px;
 
   width: 23px;
   height: 23px;
@@ -1153,7 +1255,7 @@ li.promo-quadcopter {
 
   position: absolute;
   top: 16px;
-  left: 8px;
+  left: 7px;
 
   width: 20px;
   height: 4px;
@@ -1167,28 +1269,28 @@ li.promo-quadcopter {
   content: "";
 
   position: absolute;
-  top: 5px;
-  left: 1px;
+  top: 6px;
+  left: -2px;
 
   width: 25px;
   height: 25px;
 
-  border: 3px solid #000000;
-  border-radius: 50%;
+  background-image: url(../img/radio-off.svg);
+  background-repeat: no-repeat;
 }
 
 .filter-radio:checked + label::after {
   content: "";
 
   position: absolute;
-  top: 13px;
-  left: 9px;
+  top: 6px;
+  left: -2px;
 
-  width: 10px;
-  height: 10px;
+  width: 25px;
+  height: 25px;
 
-  background-color: #000000;
-  border-radius: 50%;
+  background-image: url(../img/radio-on.svg);
+  background-repeat: no-repeat;
 }
 
 .filter-input:hover + label::before,
@@ -1205,13 +1307,12 @@ li.promo-quadcopter {
   opacity: 1;
 }
 
+.filter-radio:hover:checked + label::before {
+  display: none;
+}
+
 .filter-input:disabled + label {
   opacity: 0.25;
-}
-/* Стоимость */
-/* времено */
-form fieldset:first-child {
-  margin-bottom: 95px;
 }
 /* ------------- */
 .filter-form-button {
@@ -1247,11 +1348,12 @@ form fieldset:first-child {
 .monopods-sort {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 95px;
+  margin-bottom: 97px;
   padding-top: 20px;
 }
 
 .monopods-sort-titles {
+
   width: 160px;
 }
 
@@ -1314,16 +1416,21 @@ form fieldset:first-child {
 .monopods-item .text-wrap {
   display: flex;
   justify-content: space-between;
-  margin-top: 22px;
+  align-items: start;
+  margin-top: 24px;
 }
 
-.monopods-item-title a {
+.monopods-item-title {
+  margin: 0;
+}
+
+.monopods-item-title {
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
   color: #000000;
-  letter-spacing: 0.18px;
+  letter-spacing: 0.28px;
 }
 
 .monopods-item p {
@@ -1391,7 +1498,7 @@ form fieldset:first-child {
   justify-content: space-between;
   align-items: center;
   margin-top: -10px;
-  margin-bottom: 75px;
+  margin-bottom: 72px;
 
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 16px;
