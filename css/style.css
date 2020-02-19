@@ -79,10 +79,12 @@ input[type="radio"].visually-hidden {
   line-height: 24px;
   font-weight: 400;
   color: #000000;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 2.15px;
 
+  background: none;
   background-image: linear-gradient(to bottom, transparent 39.5%, #f0c52e 39.5%, #f0c52e 60.5%, transparent 60.5%);
+  border: 0;
 }
 
 .button:hover {
@@ -1320,9 +1322,6 @@ ul.footer-user-menu {
   padding-right: 42px;
 
   letter-spacing: 3.5px;
-
-  background-color: none;
-  border: 0;
 
   cursor: pointer;
 }
