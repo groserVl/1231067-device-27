@@ -80,6 +80,7 @@ input[type="radio"].visually-hidden {
   font-weight: 400;
   color: #000000;
   letter-spacing: 2.15px;
+  text-transform: uppercase;
 
   background: none;
   background-image: linear-gradient(to bottom, transparent 39.5%, #f0c52e 39.5%, #f0c52e 60.5%, transparent 60.5%);
