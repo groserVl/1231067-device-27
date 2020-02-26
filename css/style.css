@@ -87,7 +87,8 @@ input[type="radio"].visually-hidden {
   border: 0;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: #f0c52e;
 }
 
@@ -97,7 +98,7 @@ input[type="radio"].visually-hidden {
 
 /* Header */
 .header-nav {
-  padding: 22px 60px 40px;
+  padding: 22px 60px 44px;
 
   background-image: linear-gradient(to bottom, transparent 40px, #f7e296 40px);
 }
@@ -328,10 +329,11 @@ input[type="radio"].visually-hidden {
   margin-right: -5px;
 }
 
-/* Всплывающие меню */
+/* Выходящие подменю */
 ul.nav-catalog-list {
   position: absolute;
   left: -60px;
+  z-index: 100;
 
   display: none;
   justify-content: space-between;
@@ -351,6 +353,7 @@ ul.nav-catalog-list {
 .nav-catalog-list li {
   margin-bottom: 6px;
 }
+
 .nav-catalog-list > li:nth-child(1) {
   width: 200px;
 }
@@ -360,19 +363,9 @@ ul.nav-catalog-list {
   width: 160px;
 }
 
-/* .catalog-wrap-left {
-  width: 200px;
-}
-
-.catalog-wrap-middle,
-.catalog-wrap-right {
-  width: 160px;
-} */
-
-
 /* Промоблок(слайдер №1 */
 .promo {
-  margin-bottom: 100px;
+  margin-bottom: 97px;
 }
 
 .promo-list {
@@ -385,7 +378,7 @@ ul.nav-catalog-list {
 }
 
 .promo-list > li {
-  display: flex;
+  display: none;
   justify-content: space-between;
 }
 
@@ -394,33 +387,49 @@ ul.nav-catalog-list {
 }
 
 .promo-text {
-  width: 500px;
+  position: relative;
+  z-index: 10;
+
+  width: 560px;
 }
 
 .promo-text b {
   display: block;
   margin-top: 80px;
-  margin-bottom: 30px;
+  margin-bottom: 19px;
 
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 47px;
   line-height: 56px;
   font-weight: 400;
   color: #000000;
-  letter-spacing: 0.17px;
+  letter-spacing: 0.5px;
 }
 
 .promo-text p {
+  width: 485px;
   margin: 0;
-  margin-bottom: 60px;
+  margin-bottom: 42px;
+
+  letter-spacing: 0.18px;
 }
 
 .promo-button {
-  margin-bottom: 70px;
+  margin-bottom: 45px;
+  padding-left: 43px;
+  padding-right: 40px;
 
+  letter-spacing: 3.7px;
+}
+/* Таблица */
+.promo-table {
+  margin-left: -3px;
 }
 
-.promo-text td {
+.promo-table td {
+  width: 158px;
+  padding-bottom: 5px;
+
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 36px;
   line-height: 48px;
@@ -429,40 +438,138 @@ ul.nav-catalog-list {
   letter-spacing: 0.36px;
 }
 
-.promo-text th {
+.promo-table th {
   font-size: 13px;
   line-height: 20px;
   font-weight: 300;
   letter-spacing: 0.13px;
 }
 
-li.promo-monopod {
-  /* display: none; */
+.promo-table-value td:nth-child(2) {
+  width: 137px;
 }
 
 .promo-monopod .promo-image {
   padding-left: 90px;
 }
 
-li.promo-bracelet {
-  display: none;
-}
-
 .promo-bracelet .promo-image {
+  margin-top: 11px;
   padding-left: 115px;
 }
 
-li.promo-quadcopter {
-  display: none;
+.promo-quadcopter .promo-image {
+  margin-top: 67px;
+  margin-left: 30px;
 }
 
-.promo-quadcopter .promo-image {
-  padding-left: 30px;
+li.promo-monopod {
+  padding-bottom: 10px;
+}
+
+li.promo-quadcopter {
+  padding-bottom: 23px;
+}
+
+/* Нумерация */
+
+.promo-text::before {
+  content: "";
+
+  position: absolute;
+  top: 38px;
+  right: 460px;
+
+  width: 100px;
+  height: 7px;
+
+  background-color: #ffffff;
+
+}
+
+.promo-list .promo-text::after {
+  position: absolute;
+  top: -15px;
+  right: 50px;
+  z-index: -1;
+
+  font-family: "Gilroy Extrabold", Arial, sans-serif;
+  font-size: 179px;
+  line-height: 179.2px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.36px;
+}
+
+.promo-monopod .promo-text::after {
+  content: "01";
+}
+
+.promo-bracelet .promo-text::after {
+  content: "02";
+}
+
+.promo-quadcopter .promo-text::after {
+  content: "03";
+}
+
+/* Механизм переключения */
+.promo-controls {
+  position: relative;
+  margin-top: -177px;
+  margin-bottom: 235px;
+  padding-right: 65px;
+
+  font-size: 0;
+  text-align: right;
+
+  background-color: transparent;
+  z-index: 20;
+}
+
+.promo-controls label {
+  position: relative;
+
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 20px;
+
+  vertical-align: top;
+
+  background-color: transparent;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#monopods:checked ~ .promo-list .promo-monopod,
+#bracelets:checked ~ .promo-list .promo-bracelet,
+#quadcopters:checked ~ .promo-list .promo-quadcopter {
+  display: flex;
+}
+
+#monopods:checked ~ .promo-controls label[for="monopods"]::before,
+#bracelets:checked ~ .promo-controls label[for="bracelets"]::before,
+#quadcopters:checked ~ .promo-controls label[for="quadcopters"]::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 5px;
+  height: 5px;
+
+  border: 1px solid #000000;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
 }
 
 /* Категории товаров */
 .catalog {
-  margin-bottom: 160px;
+  margin-bottom: 80px;
 }
 
 .catalog-list {
@@ -475,7 +582,24 @@ li.promo-quadcopter {
   list-style: none;
 }
 
+.catalog-list-item div {
+  display: flex;
+  width: 160px;
+  height: 160px;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(240, 197, 46, 0.5);
+}
+
+a[href="inner.html"] div {
+  align-items: flex-end;
+}
+
 .catalog-list h3 {
+  margin: 0;
+  padding-top: 34px;
+
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
@@ -489,9 +613,35 @@ li.promo-quadcopter {
   margin-right: 40px;
 }
 
+.catalog-list-item a:hover div,
+.catalog-list-item a:focus div {
+  background-color: rgba(240, 197, 46, 1);
+  outline-color: transparent;
+}
+
+.catalog-list-item a:active div {
+  background-color: rgba(240, 197, 46, 1);
+}
+
+.catalog-list-item a:active div + h3 {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.catalog-list-item a:active svg path,
+.catalog-list-item a:active svg rect,
+.catalog-list-item a:active svg circle,
+.catalog-list-item a:active svg ellipse {
+  fill: rgba(54, 54, 54, 0.3);
+}
+
+.catalog-list-item .catalog-item-bracelet {
+  letter-spacing: 0.1px;
+}
 /* Сервисы */
 .services {
-  margin-bottom: 90px;
+  margin-bottom: 95px;
+  padding-top: 80px;
+  padding-bottom: 110px;
 
    background-image: linear-gradient(to bottom, transparent 100px, #e5e5e5 100px);
 }
@@ -502,37 +652,154 @@ li.promo-quadcopter {
 }
 
 .services-buttons {
-  width: 300px;
+  position: relative;
+
+  width: 280px;
+}
+
+.services-buttons:after {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -4px;
+
+  width: 7px;
+  height: 319px;
+
+  background-color: #000000;
+}
+
+.services-buttons .button {
+  margin-bottom: 25px;
+
+  letter-spacing: 3.8px;
+
+  cursor: pointer;
+}
+
+.button-delivery {
+  padding-right: 15px;
+  padding-left: 20px;
+}
+
+.button-warranty {
+  padding-right: 20px;
+  padding-left: 25px;
+}
+
+.button-credit {
+  padding-right: 35px;
+  padding-left: 37px;
 }
 
 .services-list {
-  width: 700px;
+  position: relative;
+
+  width: 760px;
   margin: 0;
   padding: 0;
 
   list-style: none;
 }
 
+.services-list li {
+  display: none;
+}
+
+.services-item-delivery:after {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  right: 67px;
+
+  width: 136px;
+  height: 164px;
+
+  background-image: url(../img/delivery.svg);
+}
+
+.services-item-warranty:after {
+  content: "";
+
+  position: absolute;
+  top: -16px;
+  right: 48px;
+
+  width: 171px;
+  height: 194px;
+
+  background-image: url(../img/warranty.svg);
+}
+
+.services-item-credit:after {
+  content: "";
+
+  position: absolute;
+  top: -16px;
+  right: 70px;
+
+  width: 156px;
+  height: 186px;
+
+  background-image: url(../img/credit.svg);
+}
+
 .services-list h3 {
   margin: 0;
-  margin-top: 80px;
-  margin-bottom: 40px;
+  margin-top: -7px;
+  margin-bottom: 32px;
 
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
   font-weight: 400;
   color: #000000;
-  letter-spacing: 0.21px;
+  letter-spacing: 1px;
+  vertical-align: top;
 }
 
 .services-list p {
+  width: 445px;
   margin: 0;
+
+  letter-spacing: 0.3px;
+}
+
+.services-item-warranty p {
+  letter-spacing: 0.2px;
+}
+
+#delivery:checked ~ .services-buttons .button-delivery,
+#warranty:checked ~ .services-buttons .button-warranty,
+#credit:checked ~ .services-buttons .button-credit {
+  padding-right: 136px;
+
+  color: #f7e184;
+
+  background: none;
+  background-color: #000000;
+}
+
+#credit:checked ~ .services-buttons .button-credit {
+  padding-right: 155px;
+}
+
+#delivery:checked ~ .services-list li:nth-child(1) {
+  display: block;
+}
+
+#warranty:checked ~ .services-list li:nth-child(2) {
+  display: block;
+}
+
+#credit:checked ~ .services-list li:nth-child(3) {
+  display: block;
 }
 
 /* Производители */
 .companies {
-  margin-bottom: 90px;
+  margin-bottom: 137px;
 }
 
 .companies-list {
@@ -550,8 +817,16 @@ li.promo-quadcopter {
   margin-right: 40px;
 }
 
-.companies-item h3 + a {
+.companies-images img:first-child {
   position: absolute;
+}
+
+.companies-list img:first-child:hover {
+  opacity: 0;
+}
+
+.companies-item a:focus img:first-child {
+  opacity: 0;
 }
 
 /* О нас и Контакты */
@@ -592,14 +867,17 @@ li.promo-quadcopter {
 }
 
 .about p + p {
+  width: 465px;
   margin-bottom: 65px;
 
-  letter-spacing: 0px;
+  letter-spacing: -0.2px;
 }
 
 .contacts p {
   width: 550px;
   margin-bottom: 38px;
+
+  letter-spacing: 0.1px;
 }
 
 .about ul {
@@ -623,7 +901,7 @@ li.promo-quadcopter {
 }
 
 .contacts {
-  padding-left: 20px;
+  padding-left: 19px;
 }
 
 .about-contacts h2::before {
@@ -654,7 +932,7 @@ li.promo-quadcopter {
 
 .about-button {
   margin-left: 5px;
-  padding-left: 20px;
+  padding-left: 19px;
   padding-right: 20px;
 
   letter-spacing: 3.6px;
@@ -678,7 +956,7 @@ li.promo-quadcopter {
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 65px;
-  padding-bottom: 40px;
+  padding-bottom: 47px;
 }
 
 .footer ul {
@@ -817,8 +1095,9 @@ ul.footer-user-menu {
   align-items: flex-end;
   justify-content: space-between;
   width: 430px;
-  margin-bottom: 60px;
-  padding-right: 2px;
+  margin-bottom: 59px;
+  padding-bottom: 3px;
+  padding-right: 4px;
 
 
   font-family: "Gilroy Extrabold", Arial, sans-serif;
@@ -835,7 +1114,7 @@ ul.footer-user-menu {
 /* Телефон */
 .footer-telephone {
   width: 165px;
-  margin-bottom: 60px;
+  margin-bottom: 62px;
   margin-left: 90px;
   margin-right: -2px;
 
@@ -893,7 +1172,7 @@ ul.footer-user-menu {
 
 /* Модальные окна */
 .modal {
-  /* display: none; */
+  display: none;
 }
 
 .modal-contacts label {
@@ -942,7 +1221,7 @@ ul.footer-user-menu {
 /* Заголовок страницы */
 .title {
   margin: 0;
-  margin-top: 40px;
+  margin-top: 37px;
   margin-left: 60px;
   margin-bottom: 23px;
 
@@ -1209,6 +1488,8 @@ ul.footer-user-menu {
 .filter-range-price label {
   display: inline-block;
   width: 80px;
+
+  vertical-align: middle;
 }
 
 .filter-range-price input {
@@ -1337,24 +1618,24 @@ ul.footer-user-menu {
 
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 20px;
   font-weight: 400;
   color: #000000;
   text-transform: uppercase;
-  letter-spacing: 0.91px;
+  letter-spacing: 3.8px;
 }
 
 /* Сортировка */
 .monopods-sort {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 97px;
-  padding-top: 20px;
+  margin-bottom: 93px;
+  padding-top: 27px;
 }
 
 .monopods-sort-titles {
 
-  width: 160px;
+  width: 80px;
 }
 
 .monopods-sort-list {
@@ -1368,26 +1649,98 @@ ul.footer-user-menu {
   list-style: none;
 }
 
-.sort-list-item,
-.sort-list-item a {
+.sort-item-type {
+  margin-left: 30px;
+}
+
+.sort-item-popular {
+  margin-right: auto;
+  margin-left: 30px;
+}
+
+.monopods-sort-list a {
+  display: block;
+
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.3);
 }
 
-.sort-list-item a:hover,
-.sort-list-item a:focus {
+.monopods-sort-list a:hover,
+.monopods-sort-list a:focus {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.sort-list-item a:active {
+.monopods-sort-list a:active {
   color: rgba(0, 0, 0, 1);
 }
 
-.sort-current {
+.monopods-sort-list .sort-current {
   color: rgba(0, 0, 0, 1);
 }
+
+.monopods-sort-list .sort-current:hover,
+.monopods-sort-list .sort-current:focus {
+  color: rgba(0, 0, 0, 1);
+}
+
+.sort-item-up a,
+.sort-item-down a {
+  position: relative;
+}
+
+.sort-item-down a::before {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  left: -10px;
+
+  width: 0px;
+  height: 0px;
+
+  border: 10px solid #ffffff;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  border-left-color: transparent;
+  border-left-width: 5px;
+  border-right-color: transparent;
+  border-right-width: 5px;
+  border-bottom-width: 0px;
+}
+
+.sort-item-up a::before {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  left: -40px;
+
+  width: 0px;
+  height: 0px;
+
+  border: 10px solid #ffffff;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-left-color: transparent;
+  border-left-width: 5px;
+  border-right-color: transparent;
+  border-right-width: 5px;
+  border-top-width: 0px;
+}
+
+.sort-item-up a:hover::before,
+.sort-item-up a:focus::before {
+  border-bottom-color: rgba(0, 0, 0, 0.4);
+}
+
+.sort-item-up a:active::before {
+  border-bottom-color: rgba(0, 0, 0, 1);
+}
+
+.monopods-sort-list .sort-down-current:before {
+  border-top-color: rgba(0, 0, 0, 1);
+}
+
 
 /* Карточки */
 
@@ -1492,13 +1845,46 @@ ul.footer-user-menu {
   display: flex;
 }
 
+.monopods-new::before {
+content: "";
+
+position: absolute;
+top: 28px;
+right: 28px;
+
+width: 60px;
+height: 60px;
+
+background-color: transparent;
+border: 2px solid rgba(0, 0, 0, 0.1);
+border-radius: 50%;
+}
+
+.monopods-new::after {
+content: "New";
+
+position: absolute;
+top: 47px;
+right: 41px;
+
+font-family: "Gilroy Extrabold", Arial, sans-serif;
+font-size: 14px;
+line-height: 24px;
+font-weight: 400;
+color: rgba(0, 0, 0, 0.2);
+text-transform: uppercase;
+letter-spacing: 0.25px;
+}
+
+
+
 /* Пагинация */
 .monopods-pagination {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: -10px;
-  margin-bottom: 72px;
+  margin-bottom: 74px;
 
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 16px;
@@ -1506,7 +1892,7 @@ ul.footer-user-menu {
   font-weight: 400;
   color: #000000;
   text-transform: uppercase;
-  letter-spacing: 3.5px;
+  letter-spacing: 2.5px;
 
   background-color: rgba(0, 0, 0, 0.08);
 }
@@ -1516,9 +1902,13 @@ ul.footer-user-menu {
 }
 
 .pagination-button {
-  padding: 25px 30px;
+  padding: 24px 30px;
 
   color: rgba(0, 0, 0, 1);
+}
+
+.pagination-button:hover {
+  background-color: #d8d8d8;
 }
 
 .pagination-button:active {
