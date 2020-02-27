@@ -346,7 +346,7 @@ ul.nav-catalog-list {
   background-color: #f7e296;
 }
 
-.nav-catalog li:hover .nav-catalog-list {
+.nav-catalog:hover .nav-catalog-list {
   display: flex;
 }
 
@@ -592,7 +592,7 @@ li.promo-quadcopter {
   background-color: rgba(240, 197, 46, 0.5);
 }
 
-a[href="inner.html"] div {
+.catalog-item-monopods div {
   align-items: flex-end;
 }
 
@@ -613,24 +613,24 @@ a[href="inner.html"] div {
   margin-right: 40px;
 }
 
-.catalog-list-item a:hover div,
-.catalog-list-item a:focus div {
+.catalog-list-item:hover div,
+.catalog-list-item:focus div {
   background-color: rgba(240, 197, 46, 1);
   outline-color: transparent;
 }
 
-.catalog-list-item a:active div {
+.catalog-list-item:active div {
   background-color: rgba(240, 197, 46, 1);
 }
 
-.catalog-list-item a:active div + h3 {
+.catalog-list-item:active div + h3 {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.catalog-list-item a:active svg path,
-.catalog-list-item a:active svg rect,
-.catalog-list-item a:active svg circle,
-.catalog-list-item a:active svg ellipse {
+.catalog-list-item:active path,
+.catalog-list-item:active rect,
+.catalog-list-item:active circle,
+.catalog-list-item:active ellipse {
   fill: rgba(54, 54, 54, 0.3);
 }
 
@@ -825,7 +825,7 @@ a[href="inner.html"] div {
   opacity: 0;
 }
 
-.companies-item a:focus img:first-child {
+.companies-images:focus img:first-child {
   opacity: 0;
 }
 
@@ -1338,8 +1338,8 @@ ul.footer-user-menu {
 
 /* Фильтр */
 .filter {
-  width: 300px;
-  margin-left: 60px;
+  width: 330px;
+  padding-left: 60px;
   padding-top: 25px;
 }
 
@@ -1364,6 +1364,22 @@ ul.footer-user-menu {
   border: none;
 }
 
+fieldset.filter-cost {
+  margin-left: -10px;
+}
+
+.filter-cost legend {
+  margin-left: 10px;
+}
+
+.filter-range-controls {
+  margin-left: 10px;
+}
+
+.filter-range-price {
+  margin-left: 10px;
+}
+
 .filter .filter-bluetooth {
   margin-bottom: 31px;
 }
@@ -1371,7 +1387,7 @@ ul.footer-user-menu {
 .filter legend {
   position: relative;
 
-  margin-bottom: 22px;
+  margin-bottom: 35px;
 
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 18px;
@@ -1427,10 +1443,6 @@ ul.footer-user-menu {
 }
 
 /* Стоимость */
-
-.filter-range {
-  margin-top: 14px;
-}
 
 /* Ползунок */
 .filter-range-controls {
@@ -1635,7 +1647,7 @@ ul.footer-user-menu {
 
 .monopods-sort-titles {
 
-  width: 80px;
+  width: 160px;
 }
 
 .monopods-sort-list {
@@ -1881,8 +1893,9 @@ letter-spacing: 0.25px;
 /* Пагинация */
 .monopods-pagination {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
+  width: 760px;
   margin-top: -10px;
   margin-bottom: 74px;
 
@@ -1892,19 +1905,20 @@ letter-spacing: 0.25px;
   font-weight: 400;
   color: #000000;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  letter-spacing: 3.4px;
 
   background-color: rgba(0, 0, 0, 0.08);
-}
-
-.monopods-pagination a + a {
-  order: 1;
 }
 
 .pagination-button {
   padding: 24px 30px;
 
   color: rgba(0, 0, 0, 1);
+}
+
+.monopods-pagination a + a {
+  padding-right: 26px;
+  order: 1;
 }
 
 .pagination-button:hover {
@@ -1919,6 +1933,9 @@ letter-spacing: 0.25px;
   margin: 0;
   margin-right: -30px;
   padding: 0;
+  padding-left: 30px;
+  margin-left: auto;
+  margin-right: auto;
 
   list-style: none;
 }
