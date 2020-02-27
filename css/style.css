@@ -1328,7 +1328,8 @@ ul.footer-user-menu {
 .catalog-columns {
   background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 70px, transparent 70px),
-    linear-gradient(to right, #efefef 31.5%, transparent 31.5%);
+    /* linear-gradient(to right, #efefef 31.5%, transparent 31.5%); */
+    linear-gradient(to right, #efefef 423px, transparent 423px);
 }
 
 .catalog-columns .container {
