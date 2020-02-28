@@ -582,7 +582,7 @@ li.promo-quadcopter {
   list-style: none;
 }
 
-.catalog-list-item div {
+.catalog-list-link div {
   display: flex;
   width: 160px;
   height: 160px;
@@ -613,28 +613,28 @@ li.promo-quadcopter {
   margin-right: 40px;
 }
 
-.catalog-list-item:hover div,
-.catalog-list-item:focus div {
+.catalog-list-link:hover div,
+.catalog-list-link:focus div {
   background-color: rgba(240, 197, 46, 1);
   outline-color: transparent;
 }
 
-.catalog-list-item:active div {
+.catalog-list-link:active div {
   background-color: rgba(240, 197, 46, 1);
 }
 
-.catalog-list-item:active div + h3 {
+.catalog-list-link:active div + h3 {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.catalog-list-item:active path,
-.catalog-list-item:active rect,
-.catalog-list-item:active circle,
-.catalog-list-item:active ellipse {
+.catalog-list-link:active path,
+.catalog-list-link:active rect,
+.catalog-list-link:active circle,
+.catalog-list-link:active ellipse {
   fill: rgba(54, 54, 54, 0.3);
 }
 
-.catalog-list-item .catalog-item-bracelet {
+.catalog-list-link .catalog-item-bracelet {
   letter-spacing: 0.1px;
 }
 /* Сервисы */
@@ -1326,10 +1326,35 @@ ul.footer-user-menu {
 
 /* Доп. обёртки */
 .catalog-columns {
-  background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 70px, transparent 70px),
-    /* linear-gradient(to right, #efefef 31.5%, transparent 31.5%); */
-    linear-gradient(to right, #efefef 423px, transparent 423px);
+  position: relative;
+}
+
+.filter::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+  margin-left: calc(50% - 50vw);
+
+  background-color: #efefef;
+}
+
+.catalog-columns::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  z-index: -1;
+
+  width: 100%;
+  min-height: 70px;
+
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .catalog-columns .container {
@@ -1339,7 +1364,9 @@ ul.footer-user-menu {
 
 /* Фильтр */
 .filter {
-  width: 330px;
+  position: relative;
+
+  width: 328px;
   padding-left: 60px;
   padding-top: 25px;
 }
