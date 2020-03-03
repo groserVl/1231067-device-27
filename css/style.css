@@ -2,7 +2,7 @@
 @font-face {
   font-family: "Gilroy Extrabold";
   src:  local("Gilroy Extrabold"),
-        url("../fonts/gilroyextrabold.woff2") format("woff2");
+        url("../fonts/gilroyextrabold.woff2") format("woff2"),
         url("../fonts/gilroyextrabold.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -11,7 +11,7 @@
 @font-face {
   font-family: "Gilroy";
   src:  local("Gilroy"),
-        url("../fonts/gilroylight.woff2") format("woff2");
+        url("../fonts/gilroylight.woff2") format("woff2"),
         url("../fonts/gilroylight.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -1172,10 +1172,44 @@ ul.footer-user-menu {
 
 /* Модальные окна */
 .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+
+  width: 960px;
+
+  background-color: #ffffff;
+  box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
+
+  transform: translate(-50%, -50%);
+}
+
+.modal p {
+  margin: 0;
+}
+
+/* Мод.окно - контакты */
+.modal-contacts {
   display: none;
+  padding: 94px 100px 80px;
+}
+
+.modal-contacts-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 34px;
+}
+
+.modal-contacts-name,
+.modal-contacts-email {
+  width: 360px;
 }
 
 .modal-contacts label {
+  display: block;
+  margin-bottom: 8px;
+
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
@@ -1193,10 +1227,140 @@ ul.footer-user-menu {
   border: 0;
 }
 
+.modal-contacts input::-webkit-input-placeholder {
+  color: rgba(70, 70, 70, 0.4);
+}
+
+.modal-contacts input {
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.modal-contacts input:hover {
+  background-color: rgba(229, 229, 229, 0.8);
+}
+
+.modal-contacts input:focus {
+  color: rgba(70, 70, 70, 1);
+
+  background-color: transparent;
+  outline: none;
+  outline: 3px solid rgba(240, 197, 46, 0.4);
+}
+
+.modal-contacts input:focus::-webkit-input-placeholder {
+  color: rgba(70, 70, 70, 1);
+}
+
+.modal-contacts input:invalid {
+  background-color: rgba(237, 181, 181, 0.5);
+}
+
+p.modal-contacts-text {
+  margin-bottom: 30px;
+
+  letter-spacing: 0.3px;
+}
+
+.modal-contacts-text textarea {
+  width: 100%;
+  padding: 15px 20px;
+}
+
 .modal-contacts-button {
+  padding-left: 35px;
+  padding-right: 30px;
+
+  letter-spacing: 4px;
+
   background: none;
   background-image: linear-gradient(to bottom, transparent 40%, #f0c52e 40%, #f0c52e 60%, transparent 60%);
   border: 0;
+
+  cursor: pointer;
+}
+
+/* Мод.окно - карта */
+
+.modal-map {
+  display: none;
+}
+
+.modal-map p {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal-map iframe {
+  position: relative;
+  z-index: 101;
+
+  vertical-align: middle;
+
+  border: none;
+}
+
+.modal-map img {
+  vertical-align: middle;
+}
+
+/* Кнопка закрытия мод. окон */
+.modal-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 102;
+
+  width: 55px;
+  height: 55px;
+
+  background: none;
+  background-color: rgba(240, 197, 46, 0.5);
+  border: 0;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+
+  position: absolute;
+  top: 26px;
+  left: 13px;
+
+  width: 30px;
+  height: 2px;
+
+  background-color: #ffffff;
+}
+
+.modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  transform: rotate(-45deg);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: rgba(240, 197, 46, 1);
+}
+
+.modal-close:active {
+  background-color: rgba(240, 197, 46, 0.3);
+}
+
+.modal-close:active::before,
+.modal-close:active::after {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.modal-show {
+  display: block;
 }
 /* ============================= */
 
