@@ -81,6 +81,7 @@ input[type="radio"].visually-hidden {
   color: #000000;
   letter-spacing: 2.15px;
   text-transform: uppercase;
+  vertical-align: middle;
 
   background: none;
   background-image: linear-gradient(to bottom, transparent 39.5%, #f0c52e 39.5%, #f0c52e 60.5%, transparent 60.5%);
@@ -213,12 +214,16 @@ input[type="radio"].visually-hidden {
 
 .nav-search input:focus ~ .nav-search-button {
   display: inline-block;
+
+  vertical-align: middle;
 }
 
 .nav-search-button:hover,
 .nav-search-button:focus {
   display: inline-block;
   color: rgba(255, 255, 255, 1);
+
+  vertical-align: middle;
 
   background-color: #000000;
 }
@@ -336,6 +341,7 @@ ul.nav-catalog-list {
   z-index: 100;
 
   display: none;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 1160px;
   padding-top: 25px;
@@ -560,7 +566,7 @@ li.promo-quadcopter {
 
   width: 5px;
   height: 5px;
-
+  
   border: 1px solid #000000;
   border-radius: 50%;
 
@@ -770,8 +776,8 @@ li.promo-quadcopter {
   letter-spacing: 0.2px;
 }
 
-#delivery:checked ~ .services-buttons .button-delivery,
-#warranty:checked ~ .services-buttons .button-warranty,
+.services-delivery:checked ~ .services-buttons .button-delivery,
+.services-warranty:checked ~ .services-buttons .button-warranty,
 #credit:checked ~ .services-buttons .button-credit {
   padding-right: 136px;
 
@@ -781,19 +787,19 @@ li.promo-quadcopter {
   background-color: #000000;
 }
 
-#credit:checked ~ .services-buttons .button-credit {
+.services-credit:checked ~ .services-buttons .button-credit {
   padding-right: 155px;
 }
 
-#delivery:checked ~ .services-list li:nth-child(1) {
+.services-delivery:checked ~ .services-list li:nth-child(1) {
   display: block;
 }
 
-#warranty:checked ~ .services-list li:nth-child(2) {
+.services-warranty:checked ~ .services-list li:nth-child(2) {
   display: block;
 }
 
-#credit:checked ~ .services-list li:nth-child(3) {
+.services-credit:checked ~ .services-list li:nth-child(3) {
   display: block;
 }
 
@@ -1092,11 +1098,10 @@ ul.footer-user-menu {
 .footer .footer-site-menu {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
   justify-content: space-between;
   width: 430px;
   margin-bottom: 59px;
-  padding-bottom: 3px;
+  padding-top: 5px;
   padding-right: 4px;
 
 
@@ -1170,6 +1175,46 @@ ul.footer-user-menu {
   vertical-align: middle;
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
+
+  70% {
+    transform: translateY(50px);
+  }
+
+  90% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
 /* Модальные окна */
 .modal {
   position: fixed;
@@ -1178,11 +1223,12 @@ ul.footer-user-menu {
   z-index: 100;
 
   width: 960px;
+  margin-left: -480px;
+  margin-top: -277px;
 
   background-color: #ffffff;
   box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
 
-  transform: translate(-50%, -50%);
 }
 
 .modal p {
@@ -1254,6 +1300,7 @@ ul.footer-user-menu {
 
 .modal-contacts input:invalid {
   background-color: rgba(237, 181, 181, 0.5);
+  border: 0;
 }
 
 p.modal-contacts-text {
@@ -1361,6 +1408,14 @@ p.modal-contacts-text {
 
 .modal-show {
   display: block;
+
+  animation-name: bounce;
+  animation-duration: 0.5s;
+}
+
+.modal-error {
+  animation-name: shake;
+  animation-duration: 0.6s;
 }
 /* ============================= */
 
@@ -1978,10 +2033,9 @@ fieldset.filter-cost {
 }
 
 .monopods-item-title {
+  width: 260px;
   margin: 0;
-}
 
-.monopods-item-title {
   font-family: "Gilroy Extrabold", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
