@@ -549,15 +549,15 @@ li.promo-quadcopter {
   cursor: pointer;
 }
 
-#monopods:checked ~ .promo-list .promo-monopod,
-#bracelets:checked ~ .promo-list .promo-bracelet,
-#quadcopters:checked ~ .promo-list .promo-quadcopter {
+.promo-monopods-toggle:checked ~ .promo-list .promo-monopod,
+.promo-bracelets-toggle:checked ~ .promo-list .promo-bracelet,
+.promo-quadcopters-toggle:checked ~ .promo-list .promo-quadcopter {
   display: flex;
 }
 
-#monopods:checked ~ .promo-controls label[for="monopods"]::before,
-#bracelets:checked ~ .promo-controls label[for="bracelets"]::before,
-#quadcopters:checked ~ .promo-controls label[for="quadcopters"]::before {
+.promo-monopods-toggle:checked ~ .promo-controls label[for="monopods"]::before,
+.promo-bracelets-toggle:checked ~ .promo-controls label[for="bracelets"]::before,
+.promo-quadcopters-toggle:checked ~ .promo-controls label[for="quadcopters"]::before {
   content: "";
 
   position: absolute;
@@ -566,11 +566,18 @@ li.promo-quadcopter {
 
   width: 5px;
   height: 5px;
-  
+
   border: 1px solid #000000;
   border-radius: 50%;
 
   transform: translate(-50%, -50%);
+}
+
+.promo-monopods-toggle:focus ~ .promo-controls label[for="monopods"],
+.promo-bracelets-toggle:focus ~ .promo-controls label[for="bracelets"],
+.promo-quadcopters-toggle:checked ~ .promo-controls label[for="quadcopters"] {
+  box-shadow: 0 0 0 2px #4d90fe;
+
 }
 
 /* Категории товаров */
@@ -676,6 +683,9 @@ li.promo-quadcopter {
 }
 
 .services-buttons .button {
+  position: relative;
+  z-index: 1;
+
   margin-bottom: 25px;
 
   letter-spacing: 3.8px;
@@ -778,7 +788,7 @@ li.promo-quadcopter {
 
 .services-delivery:checked ~ .services-buttons .button-delivery,
 .services-warranty:checked ~ .services-buttons .button-warranty,
-#credit:checked ~ .services-buttons .button-credit {
+.services-credit:checked ~ .services-buttons .button-credit {
   padding-right: 136px;
 
   color: #f7e184;
@@ -801,6 +811,12 @@ li.promo-quadcopter {
 
 .services-credit:checked ~ .services-list li:nth-child(3) {
   display: block;
+}
+
+.services-delivery:focus ~ .services-buttons .button-delivery,
+.services-warranty:focus ~ .services-buttons .button-warranty,
+.services-credit:focus ~ .services-buttons .button-credit {
+  box-shadow: 0 0 0 2px #4d90fe;
 }
 
 /* Производители */
