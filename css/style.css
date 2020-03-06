@@ -953,6 +953,7 @@ li.promo-quadcopter {
 }
 
 .about-button {
+  width: 260px;
   margin-left: 5px;
   padding-left: 19px;
   padding-right: 20px;
@@ -1315,6 +1316,11 @@ ul.footer-user-menu {
 }
 
 .modal-contacts input:invalid {
+  background-color: rgba(237, 181, 181, 0.5);
+  border: 0;
+}
+
+.modal-contacts .modal-invalid {
   background-color: rgba(237, 181, 181, 0.5);
   border: 0;
 }

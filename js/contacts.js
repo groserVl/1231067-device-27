@@ -30,23 +30,30 @@ close.addEventListener('click', function (evt) {
   evt.preventDefault();
   contact.classList.remove('modal-show');
   contact.classList.remove('modal-error');
+  user.classList.remove('modal-invalid');
+  email.classList.remove('modal-invalid');
 });
 
 form.addEventListener("submit", function (evt) {
 
   if (!user.value || !email.value) {
     evt.preventDefault();
+    user.classList.add('modal-invalid');
+    email.classList.add('modal-invalid');
     contact.classList.remove("modal-error");
     contact.offsetWidth = contact.offsetWidth;
     contact.classList.add('modal-error');
-    console.log(user.placeholder);
   } else {
     if (isStorageSupport) {
       localStorage.setItem('name', name.value);
-      console.log(email.placeholder);
     }
   }
+});
 
+user.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  user.classList.remove('modal-invalid');
+  email.classList.remove('modal-invalid');
 });
 
 window.addEventListener('keydown', function(evt) {
@@ -55,6 +62,8 @@ window.addEventListener('keydown', function(evt) {
       evt.preventDefault();
       contact.classList.remove('modal-show');
       contact.classList.remove('modal-error');
+      user.classList.remove('modal-invalid');
+      email.classList.remove('modal-invalid');
     }
   }
 });
