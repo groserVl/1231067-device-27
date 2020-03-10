@@ -1359,6 +1359,8 @@ p.modal-contacts-text {
 .modal-contacts-text textarea {
   width: 100%;
   padding: 15px 20px;
+
+  resize: none;
 }
 
 .modal-contacts-button {
