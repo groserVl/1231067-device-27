@@ -6,17 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML Academy: Девайс</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap&subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
     <header class="header container">
       <nav class="header-nav">
-        <div class="header-top-wrap">
-          <a class="nav-logo">
-            <img src="img/logo-black.svg" width="164" height="36" alt="Логотип магазина DEVICE">
-          </a>
-        </div>
+        <a class="header-top-wrap nav-logo">
+          <img src="img/logo-black.svg" width="164" height="36" alt="Логотип магазина DEVICE">
+        </a>
         <div class="header-middle-wrap">
           <ul class="nav-search">
             <li>
@@ -441,8 +439,8 @@
       <div class="about-contacts container">
         <section class="about">
           <h2>О нас</h2>
-          <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
-          <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:</p>
+          <p class="about-slogan">Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
+          <p class="about-transportation">Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:</p>
           <ul>
             <li>Деловые Линии</li>
             <li>Автотрейдинг</li>
@@ -454,11 +452,11 @@
         <section class="contacts">
           <h2>Контакты</h2>
           <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
-          <a class="contacts-map" href="#">
+          <a class="contacts-map" href="https://www.google.ru/maps/place/%D1%83%D0%BB.+%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9,+15,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+119311/@55.687034,37.5274293,17z/data=!3m1!4b1!4m5!3m4!1s0x46b54cf65f5c8955:0x694710ccd55501e!8m2!3d55.687031!4d37.529618?hl=ru">
             <img src="img/map.png" width="560" height="222" alt="г. Москва, ул. Строителей, 15
             ">
           </a>
-          <a class="button contacts-button" href="#">Напишите нам</a>
+          <a class="button contacts-button" href="writeus.html">Напишите нам</a>
         </section>
       </div>
 
@@ -511,7 +509,7 @@
           </li>
         </ul>
         <a class="footer-logo-htmlacademy" href="https://htmlacademy.ru/intensive/htmlcss">
-          <img src="img/logo-html.svg" width="27" height="35" alt="Логотип HTML Academy">
+          <img src="img/logo-html.svg" width="27" height="35" alt="Логотип HTML Academy"><span class="visually-hidden">HTML Academy</span>
         </a>
       </div>
     </footer>
@@ -547,7 +545,6 @@
       <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
     </section>
 
-    <script src="js/contacts.min.js"></script>
-    <script src="js/map.min.js"></script>
+    <script src="js/main.min.js"></script>
   </body>
 </html>

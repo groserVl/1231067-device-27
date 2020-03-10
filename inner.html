@@ -6,16 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML Academy: Девайс</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap&subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body class="inner-page">
     <header class="header container">
       <nav class="header-nav">
-        <div class="header-top-wrap">
-          <a class="nav-logo" href="index.html"><img src="img/logo-black.svg" width="164" height="36" alt="Логотип магазина DEVICE">
-          </a>
-        </div>
+        <a class="header-top-wrap nav-logo" href="index.html">
+          <img src="img/logo-black.svg" width="164" height="36" alt="Логотип магазина DEVICE">
+        </a>
         <div class="header-middle-wrap">
           <ul class="nav-search">
             <li>
@@ -281,8 +280,8 @@
 
             <div class="monopods-pagination">
               <h3 class="visually-hidden">Пагинация - порядковая нумерация страниц</h3>
-              <a class="pagination-button" href="#">Назад</a>
-              <a class="pagination-button" href="#">Вперёд</a>
+              <a class="pagination-button pagination-button-previous" href="#">Назад</a>
+              <a class="pagination-button pagination-button-next" href="#">Вперёд</a>
               <ul class="pagination-list">
                 <li class="pagination-list-item pagination-current">
                   <a>1</a>
@@ -349,9 +348,11 @@
           </li>
         </ul>
         <a class="footer-logo-htmlacademy" href="https://htmlacademy.ru/intensive/htmlcss">
-          <img src="img/logo-html.svg" width="27" height="35" alt="Логотип HTML Academy">
+          <img src="img/logo-html.svg" width="27" height="35" alt="Логотип HTML Academy"><span class="visually-hidden">HTML Academy</span>
         </a>
       </div>
     </footer>
+
+    <script src="js/main.min.js"></script>
   </body>
 </html>

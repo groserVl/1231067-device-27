@@ -590,9 +590,12 @@ li.promo-quadcopter {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  margin-right: -40px;
 
   list-style: none;
+}
+
+.catalog-list li:nth-child(6n) {
+  margin-right: 0;
 }
 
 .catalog-list-link div {
@@ -636,7 +639,7 @@ li.promo-quadcopter {
   background-color: rgba(240, 197, 46, 1);
 }
 
-.catalog-list-link:active div + h3 {
+.catalog-list-link:active h3 {
   color: rgba(0, 0, 0, 0.3);
 }
 
@@ -829,9 +832,12 @@ li.promo-quadcopter {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  margin-right: -40px;
 
   list-style: none;
+}
+
+.companies-list li:nth-child(4n) {
+  margin-right: 0;
 }
 
 .companies-item {
@@ -884,11 +890,11 @@ li.promo-quadcopter {
   letter-spacing: 0.15px;
 }
 
-.about h2 + p {
+.about .about-slogan {
   margin-bottom: 30px;
 }
 
-.about p + p {
+.about .about-transportation {
   width: 465px;
   margin-bottom: 65px;
 
@@ -1232,6 +1238,16 @@ ul.footer-user-menu {
   }
 }
 
+@keyframes exit {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateX(2000px);
+  }
+}
+
 /* Модальные окна */
 .modal {
   position: fixed;
@@ -1294,16 +1310,25 @@ ul.footer-user-menu {
   color: rgba(70, 70, 70, 0.4);
 }
 
+.modal-contacts input::-webkit-contacts-auto-fill-button {
+   visibility: hidden;
+   pointer-events: none;
+   position: absolute;
+   right: 0;
+}
+
 .modal-contacts input {
   width: 100%;
   padding: 15px 20px;
 }
 
-.modal-contacts input:hover {
+.modal-contacts input:hover,
+.modal-contacts-text textarea:hover {
   background-color: rgba(229, 229, 229, 0.8);
 }
 
-.modal-contacts input:focus {
+.modal-contacts input:focus,
+.modal-contacts-text textarea:focus {
   color: rgba(70, 70, 70, 1);
 
   background-color: transparent;
@@ -1438,6 +1463,14 @@ p.modal-contacts-text {
 .modal-error {
   animation-name: shake;
   animation-duration: 0.6s;
+}
+
+.modal-exit {
+  display: block;
+
+  animation-name: exit;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 /* ============================= */
 
@@ -1749,6 +1782,10 @@ fieldset.filter-cost {
   cursor: pointer;
 }
 
+.filter-range-controls .toggle:active {
+  transform: scale(1.1);
+}
+
 .filter-range-controls .toggle-min {
   left: -6px;
 }
@@ -2029,10 +2066,13 @@ fieldset.filter-cost {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  margin-right: -40px;
   padding: 0;
 
   list-style: none;
+}
+
+.monopods-list li:nth-child(2n) {
+  margin-right: 0;
 }
 
 .monopods-list p {
@@ -2184,7 +2224,7 @@ letter-spacing: 0.25px;
   color: rgba(0, 0, 0, 1);
 }
 
-.monopods-pagination a + a {
+.monopods-pagination .pagination-button-next {
   padding-right: 26px;
   order: 1;
 }
@@ -2232,10 +2272,3 @@ letter-spacing: 0.25px;
 .pagination-current a:hover {
   color: rgba(0, 0, 0, 1);
 }
-
-
-
-
-
-
-

@@ -17,6 +17,7 @@ try {
 link.addEventListener('click', function (evt) {
   evt.preventDefault();
   contact.classList.add('modal-show');
+  contact.classList.remove('modal-exit');
 
   if (storage) {
     user.value = storage;
@@ -32,6 +33,7 @@ close.addEventListener('click', function (evt) {
   contact.classList.remove('modal-error');
   user.classList.remove('modal-invalid');
   email.classList.remove('modal-invalid');
+  contact.classList.add('modal-exit');
 });
 
 form.addEventListener("submit", function (evt) {
@@ -64,6 +66,7 @@ window.addEventListener('keydown', function(evt) {
       contact.classList.remove('modal-error');
       user.classList.remove('modal-invalid');
       email.classList.remove('modal-invalid');
+      contact.classList.add('modal-exit');
     }
   }
 });
